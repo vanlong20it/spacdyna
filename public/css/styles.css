@@ -107,23 +107,17 @@ body {
 .header .toggle-collapse {
   position: relative;
   display: none;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.header .toggle-collapse .shape {
-  position: relative;
+.header .toggle-collapse .line {
   width: 30px;
-  height: 30px;
+  height: 3px;
   background-color: #000;
+  margin: 5px 0px;
+  transition: margin 0.2s ease-out;
 }
-.header .toggle-collapse .shape::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 100em;
-  background-color: #fff;
+.header .toggle-collapse.active .line {
+  margin: -1.5px 0px;
 }
 
 .main-content h2.title {
@@ -619,6 +613,9 @@ body {
   }
   .header #logo {
     font-size: 20px;
+  }
+  .header .navbar {
+    top: 60px;
   }
 
   .main-content .jumbotron h4 {

@@ -105,28 +105,24 @@ body {
     .toggle-collapse {
         position: relative;
         display: none;
-        .shape {
-            position: relative;
+        transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        .line {
             width: 30px;
-            height: 30px;
+            height: 3px;
             background-color: #000;
-            &::after {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                content: "";
-                width: 20px;
-                height: 20px;
-                border-radius: 100em;
-                background-color: #fff;
+            margin: 5px 0px;
+            transition: margin 0.2s ease-out;
+        }
+        &.active {
+            .line {
+                margin: -1.5px 0px;
             }
         }
     }
 }
 
 .main-content {
-    h2.title{
+    h2.title {
         text-align: center;
     }
     .jumbotron {
@@ -641,6 +637,9 @@ body {
         #logo {
             font-size: 20px;
         }
+        .navbar {
+            top: 60px;
+        }
     }
     .main-content {
         .jumbotron {
@@ -696,39 +695,38 @@ body {
             }
         }
         .blog {
-            .blog-thumb{
+            .blog-thumb {
                 display: none;
             }
             .blog-left {
                 .blog-info {
                     bottom: 0px;
-                    margin:0;
-                    position:static;
-                    .top-info{
+                    margin: 0;
+                    position: static;
+                    .top-info {
                         font-size: 12px;
                         flex-direction: column;
                         text-align: left;
                         align-items: inherit;
                     }
-                    .summary{
+                    .summary {
                         font-size: 13px;
                     }
                 }
             }
-            .blog-grid{
+            .blog-grid {
                 margin-top: 20px;
             }
-            .blog-right{
-                .blog-item-info{
-                    .date{
+            .blog-right {
+                .blog-item-info {
+                    .date {
                         font-size: 11px;
                     }
-                    .title{
+                    .title {
                         font-size: 16px;
                     }
-                    .summary{
+                    .summary {
                         font-size: 13px;
-
                     }
                 }
             }
